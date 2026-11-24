@@ -1,0 +1,54 @@
+/* Roma Hub iOS 12 — targeted fallbacks, same UI and content. */
+html.ios12 .sidebar { top:0;bottom:0;left:0; }
+html.ios12 .reader.reader-v2 {
+  position:fixed;top:0;right:0;bottom:0;left:0;
+  height:100vh;width:100%;overflow:hidden;
+}
+html.ios12 .reader-v3 .readermenu {
+  width:calc(100vw - 24px);max-width:450px;
+  max-height:calc(100vh - 84px);
+}
+html.ios12 .reader-v2 .thumbnails { width:40vw;max-width:195px; }
+html.ios12 .reader-v2 .paper { width:auto;min-width:100%; }
+html.ios12 .pwa-install-sheet {
+  width:calc(100vw - 30px);max-width:420px;max-height:calc(100vh - 30px);
+  right:15px;bottom:15px;
+}
+/* Flexbox gap is absent before Safari 14.1; restore essential spacing. */
+html.ios12 .brand > * + * { margin-left:12px; }
+html.ios12 .nav-btn > * + * { margin-left:11px; }
+html.ios12 .reader-v3 .reader-panel-head > * + * { margin-left:10px; }
+html.ios12 .reader-v3 .reader-stepper > * + * { margin-left:7px; }
+html.ios12 .reader-v3 .reader-scale-line > * + * { margin-left:8px; }
+html.ios12 .reader-v3 .reader-note-options > * + * { margin-left:7px; }
+html.ios12 .reader-v3 .reader-ink-color > * + * { margin-left:7px; }
+html.ios12 .pwa-head > * + * { margin-left:13px; }
+html.ios12 .pwa-install-actions > * + * { margin-left:9px; }
+html.ios12 .reader-v3 .reader-menu-toggle > * + * { margin-left:7px; }
+/* Prevent auto-zooming input controls while rehearsing on a phone. */
+@media (max-width: 740px) {
+  html.ios12 input, html.ios12 select, html.ios12 textarea { font-size:16px; }
+  html.ios12 .reader-v3 .readermenu {
+    right:8px;top:60px;width:calc(100vw - 16px);
+    max-height:calc(100vh - 72px);
+  }
+}
+
+/* Configuración / biblioteca offline: matches Roma Hub cards. */
+.ios12-bulk-settings{max-width:780px;padding:22px 24px;border:1px solid #e4eaf0;border-radius:15px;background:#fff;box-shadow:0 5px 25px rgba(20,45,65,.04)}
+.ios12-bulk-head{display:flex;align-items:flex-start;gap:15px}
+.ios12-bulk-head h2{font-size:20px;line-height:1.3;margin:0 0 7px;color:#173349}
+.ios12-bulk-head p{font-size:13px;color:#63758a;margin:0}
+.ios12-bulk-icon{display:inline-flex;flex:none;align-items:center;justify-content:center;width:47px;height:47px;border-radius:12px;background:#e3f0f1;color:#286477;font-size:27px}
+.ios12-bulk-progress{margin:23px 0 19px;padding:17px 18px;background:#f5f8fa;border-radius:12px}
+.ios12-bulk-progress strong{display:block;font-size:16px;color:#294659;margin-bottom:11px}
+.ios12-bulk-progress progress{display:block;width:100%;height:14px;accent-color:#286477}
+.ios12-bulk-progress progress[hidden]{display:none!important}
+.ios12-bulk-progress p{font-size:12px;line-height:1.55;color:#607585;margin:11px 0 0}
+.ios12-bulk-actions{display:flex;flex-wrap:wrap;gap:10px}
+.ios12-bulk-actions button{min-height:46px;max-width:100%;white-space:normal}
+.ios12-bulk-actions button[hidden]{display:none!important}
+.ios12-bulk-caveat{font-size:12px;line-height:1.55;color:#657b8e;margin:17px 0 0}
+@media(max-width:620px){.ios12-bulk-settings{padding:19px 16px}.ios12-bulk-head{gap:11px}.ios12-bulk-icon{height:42px;width:42px}.ios12-bulk-actions button{width:100%}}
+html.ios12 .ios12-bulk-head>div{margin-left:12px}
+html.ios12 .ios12-bulk-actions>button+button{margin-left:10px}
