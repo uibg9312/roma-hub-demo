@@ -267,7 +267,7 @@ async function openPdf(id){
  try{
   var opened=await Promise.all([ensurePdfEngine(),fetchPdfBytes(score.pdfUrl)]);
   window.pdfjsLib.GlobalWorkerOptions.workerSrc='/vendor/pdf.worker.min.js';var bytes=opened[1];
-  if(epoch!==readerEpoch)return;var task=window.pdfjsLib.getDocument({data:new Uint8Array(bytes),isEvalSupported:false});var doc=await task.promise;if(epoch!==readerEpoch){doc.destroy();return}S.doc=doc;if(window.CoroTouchMidi)await CoroTouchMidi.open(score.origin_id||score.id,doc);
+  if(epoch!==readerEpoch)return;var task=window.pdfjsLib.getDocument({isEvalSupported:false,data:new Uint8Array(bytes),isEvalSupported:false});var doc=await task.promise;if(epoch!==readerEpoch){doc.destroy();return}S.doc=doc;if(window.CoroTouchMidi)await CoroTouchMidi.open(score.origin_id||score.id,doc);
   var prev=S.recent.find(function(x){return x.score_id===id});
   if(prev){S.pdfPage=Math.min(S.doc.numPages,Math.max(1,Number(prev.page)||1));S.pdfScale=Math.min(4,Math.max(.4,Number(prev.zoom)||1));S.pdfRotation=Number(prev.rotation)||0}
   by('totalPages').textContent='/ '+S.doc.numPages;
