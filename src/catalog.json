@@ -1,0 +1,37 @@
+[
+  {
+    "id": "handel-hallelujah",
+    "title": "Hallelujah — Handel",
+    "language": "en",
+    "theme": "Messiah · SATB",
+    "pdfUrl": "/scores/handel-hallelujah.pdf"
+  },
+  {
+    "id": "beethoven-hallelujah",
+    "title": "Hallelujah — Beethoven (The Mount of Olives)",
+    "language": "en",
+    "theme": "Op. 85 · complete vocal score",
+    "pdfUrl": "/scores/beethoven-hallelujah.pdf"
+  },
+  {
+    "id": "amazing-grace",
+    "title": "Amazing Grace",
+    "language": "en",
+    "theme": "Hymn",
+    "pdfUrl": "/scores/amazing-grace.pdf"
+  },
+  {
+    "id": "abide-with-me",
+    "title": "Abide With Me",
+    "language": "en",
+    "theme": "Hymn",
+    "pdfUrl": "/scores/abide-with-me.pdf"
+  },
+  {
+    "id": "donaudy-italiano",
+    "title": "36 Arie di Stile Antico, vol. II — Donaudy",
+    "language": "it",
+    "theme": "Italian art songs · O del mio amato ben",
+    "pdfUrl": "/scores/donaudy-italiano.pdf"
+  }
+]

@@ -1,0 +1,51 @@
+/* SDD: compact landing; never affects reader or study. */
+.home-dashboard{gap:12px}
+.home-hero{padding:20px 26px;min-height:0;border-radius:12px}
+.home-hero-copy{max-width:660px}
+.home-kicker{font-size:11px;line-height:1.4;margin:0 0 9px}
+.home-hero h1{font-size:clamp(21px,2.5vw,31px);line-height:1.2;letter-spacing:-.018em;max-width:620px;text-wrap:balance}
+.home-verse{font-size:11px;line-height:1.4;margin:8px 0 14px}
+.home-hero-actions{gap:8px}
+.home-hero-actions .btn,.home-hero-secondary{min-height:44px;font-size:12px;padding:0 12px;gap:6px}
+.home-hero-actions svg{width:16px!important;height:16px!important}
+.home-quick{gap:8px}
+.home-access{min-height:60px;padding:9px 11px;gap:8px;border-radius:9px}
+.home-access-icon{width:32px;height:32px;flex-basis:32px}
+.home-access-icon svg{width:18px;height:18px}
+.home-access-copy strong,.home-row-copy strong{font-size:13px}
+.home-access-copy span,.home-row-copy small{font-size:11px}
+.home-columns,.home-lists{gap:12px}
+.home-section{padding:13px 14px 3px;border-radius:10px}
+.home-section-head{margin-bottom:4px}
+.home-section-head h2{font-size:16px}
+.home-section-head p{font-size:11px;margin-top:3px}
+.home-row{min-height:52px;padding:7px 0;gap:9px}
+.home-row-icon{width:30px;height:30px;flex-basis:30px}
+.home-empty{padding:12px 0}
+.home-empty strong{font-size:13px}
+.home-empty p{font-size:12px;line-height:1.45;margin:4px 0 0}
+.home-resume{padding:7px 12px}
+.home-resume h2{font-size:14px}
+.home-resume p{font-size:11px}
+.home-link,.home-inline{font-size:12px}
+.home-staff{opacity:.10}
+.coro-google-auth{margin:0 0 14px}
+.coro-google-button{width:100%;display:flex;gap:10px;justify-content:center;align-items:center;min-height:46px;background:#fff;color:#243949;border:1px solid #b9c5ce;border-radius:9px;font:600 14px/1.3 system-ui,sans-serif;cursor:pointer}
+.coro-google-button:hover:not(:disabled){background:#f3f6f8}
+.coro-google-button:focus-visible{outline:2px solid #477d9d;outline-offset:3px}
+.coro-google-button:disabled{opacity:.62;cursor:default}
+.coro-google-note{margin:7px 0 0;color:#536a7d;font-size:12px;line-height:1.45}
+.coro-google-rule{display:flex;align-items:center;gap:10px;color:#536a7d;font-size:12px;margin:12px 0}
+.coro-google-rule::before,.coro-google-rule::after{content:"";height:1px;flex:1;background:#dfe5ea}
+@media(max-width:850px){.home-hero{padding:18px 20px}.home-dashboard{gap:10px}.home-quick{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.home-hero{padding:15px 16px}.home-hero h1{font-size:clamp(19px,5.5vw,24px);line-height:1.23}.home-kicker{margin-bottom:7px}.home-verse{margin:7px 0 11px}.home-hero-actions{gap:6px}.home-hero-actions .btn,.home-hero-secondary{min-height:44px;padding:0 9px;font-size:11px}.home-quick{gap:6px}.home-access{min-height:62px;padding:8px;gap:6px;align-items:center}.home-access-icon{width:26px;height:26px;flex-basis:26px}.home-access-copy strong{font-size:12px}.home-access-copy span{font-size:11px;line-height:1.3}.home-section{padding:11px 11px 3px}.home-section-head h2{font-size:15px}.home-columns,.home-lists{gap:10px}.home-link,.home-inline{font-size:11px}.home-staff{display:none}}
+@media(prefers-reduced-motion:reduce){.home-dashboard button,.coro-google-button{transition:none!important;transform:none!important}}
+
+/* El último canto es la acción principal y no compite con novedades editoriales. */
+.home-resume-featured{border:2px solid #d2b67b;background:#fdf8ee;gap:16px;padding:15px 18px}
+.home-resume-featured h2{color:#162e43;font-size:clamp(16px,2vw,20px);font-weight:750;white-space:normal;overflow-wrap:anywhere}
+.home-resume-featured p{color:#68512e;font-size:12px;font-weight:750;letter-spacing:.025em}
+.home-resume-featured .home-continue{display:inline-flex;align-items:center;gap:7px;min-height:44px;flex:none;white-space:nowrap}
+.home-resume-featured .home-continue svg{width:16px;height:16px}
+@media(max-width:520px){.home-resume-featured{padding:12px 13px;gap:10px}.home-resume-featured h2{font-size:15px}.home-resume-featured .home-continue{font-size:12px;padding:0 10px}}
+@media(max-width:360px){.home-resume-featured{flex-wrap:wrap}.home-resume-featured .home-continue{width:100%;justify-content:center}}

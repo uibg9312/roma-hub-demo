@@ -1,0 +1,184 @@
+
+/* Roma Hub Demo · Estudio SDD 1.0 */
+.study-results{display:flex;flex-direction:column;gap:12px}
+.study-headcontrols{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:12px 0 20px;padding:16px 19px;background:#fff;border:1px solid #e3e9ee;border-radius:14px}
+.study-voice-label{font-weight:750;color:#293f57;font-size:14px}
+.study-voice-label select,.practice-voice select,.practice-player select,.study-select-songs{border:1px solid #d9e2ec;padding:10px 12px;border-radius:9px;background:#fff;color:#203850;margin-left:9px;max-width:100%}
+.study-tabs{display:flex;gap:7px;overflow-x:auto;padding-bottom:8px;border-bottom:1px solid #dce5ec;margin-bottom:16px;scrollbar-width:thin}
+.study-tabs button{flex-shrink:0;background:transparent;color:#71849a;border:0;border-radius:9px;padding:12px 14px;font-size:13px;font-weight:750}
+.study-tabs button.selected{color:#183d62;background:#e4ebf4;box-shadow:inset 0 -3px #d8ac72}
+.study-list{display:flex;flex-direction:column;gap:11px}
+.study-item{border-radius:13px;background:#fff;border:1px solid #e3e8ee;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;box-shadow:0 2px 8px #16294408}
+.study-lesson{min-width:0;flex:1}
+.study-lesson>strong{font-size:15px;line-height:1.4;color:#17314e;display:block;margin-bottom:5px}
+.study-details{font-size:12px;color:#7a8e9f;line-height:1.65;max-width:680px}
+.study-badges{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
+.study-chip{display:inline-block;padding:5px 8px;border-radius:7px;background:#ebf1f8;color:#3e617f;font-size:11px;font-weight:750}
+.study-chip.warning{background:#fff3df;color:#96682c}
+.study-chip.success{background:#e7f6ec;color:#2b8060}
+.study-item-actions{display:flex;flex-wrap:wrap;gap:7px;justify-content:flex-end;max-width:350px}
+.study-continuation{background:#eaf0f7;border-left:3px solid #d1a977;border-radius:12px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.study-continuation small{display:block;font-weight:850;color:#7b8fa4;letter-spacing:1px;margin-bottom:4px}
+.study-continuation strong{font-size:14px}
+.study-continuation p{font-size:11px;color:#6d8096;margin:3px 0 0}
+.study-modal{max-width:760px}
+.study-admin-section{border-top:1px solid #edf1f6;padding:17px 0 7px}
+.study-admin-section h3{font-size:14px;color:#28445f;margin:0 0 12px}
+.study-admin-section p{font-size:12px;line-height:1.6;color:#76899c}
+.study-admin-row{display:flex;gap:10px;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid #ecf0f5;font-size:12px;color:#263a54}
+.study-admin-row span{min-width:0;flex:1}
+.study-admin-row small{display:block;color:#7e91a3;line-height:1.5}
+.study-matrix{border-collapse:collapse;width:100%;font-size:12px}
+.study-matrix th{text-align:left;background:#f1f5f8;color:#50677d}
+.study-matrix td,.study-matrix th{padding:10px 9px;border-bottom:1px solid #e8edf3;vertical-align:top}
+.study-modal .form label{font-size:12px}
+.study-modal .study-select-songs{margin:5px 0 0;width:100%}
+.study-practice-bar{background:#e8eff6;color:#1f354b;display:flex;flex-wrap:wrap;align-items:center;gap:11px;padding:10px 16px;box-shadow:0 -3px 8px #0001;z-index:2;min-height:88px}
+.practice-title{flex:0 0 160px;min-width:100px}
+.practice-title strong,.practice-title small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.practice-title strong{font-size:12px;color:#1c3654}
+.practice-title small{font-size:10px;color:#75899b;margin-top:4px}
+.practice-voice{font-size:11px;font-weight:750}
+.practice-voice select{padding:7px 9px;margin-left:4px}
+.practice-player{display:flex;gap:8px;flex:1;align-items:center;flex-wrap:wrap;min-width:180px}
+.practice-player audio{flex:1 1 170px;min-width:130px;max-width:390px;height:36px}
+.practice-player>button{border:1px solid #c8d4df;background:#fff;color:#2d4b67;border-radius:8px;min-height:33px;padding:6px 9px;font-size:11px;font-weight:750}
+.practice-player label{font-size:11px;color:#405b78;white-space:nowrap}
+.practice-player select{padding:5px 6px;margin-left:3px}
+.practice-audio-label{font-size:11px;font-weight:750;max-width:175px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.study-missing{color:#886331;font-size:11px;background:#fff3df;border-radius:7px;padding:8px 10px}
+@media(max-width:740px){.study-item{padding:15px;flex-direction:column;align-items:stretch}.study-item-actions{justify-content:flex-start;max-width:none}.study-lesson>strong{font-size:15px}.study-headcontrols{padding:13px}.study-voice-label select{font-size:13px;padding:8px;margin-left:4px}.study-tabs button{font-size:12px;padding:10px 11px}.study-modal{max-height:92vh}.study-admin-row{align-items:flex-start;flex-wrap:wrap}.study-admin-row .controls{width:100%}.study-practice-bar{padding:9px 10px;gap:7px}.practice-title{flex:1 1 100px}.practice-player{order:3;flex:1 1 100%}.practice-player audio{min-width:135px}.practice-audio-label{display:none}.study-practice-bar .btn{min-height:33px;padding:5px 7px;font-size:10px}.reader .readerbody{min-height:120px}}
+
+
+/* Modo de lectura y escucha: el visor PDF conserva su zoom y desplazamiento. */
+.study-featured-card{align-items:center}
+.study-featured-card .study-item-actions{max-width:none}
+.reader.study-featured-reader .readerbody{display:flex;align-items:stretch}
+.reader.study-featured-reader .viewer{flex:1 1 auto;min-width:0}
+.reader.study-featured-reader .study-featured-dock{box-sizing:border-box;flex:0 0 258px;width:258px;padding:16px 12px;display:flex;flex-direction:column;gap:12px;overflow-y:auto;overflow-x:hidden;border-left:1px solid #dce5ee;background:#f5f7fa;color:#17314e;z-index:3}
+.study-featured-heading strong,.study-featured-heading small{display:block}
+.study-featured-heading strong{font-size:14px;line-height:1.4}
+.study-featured-heading small{font-size:11px;color:#6e8298}
+.study-featured-voice{font-size:12px;font-weight:750;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.study-featured-voice select,.study-featured-native-actions select{min-height:38px;border-radius:9px;background:#fff;border:1px solid #cad7e5;color:#17314e;padding:8px;min-width:0}
+.study-featured-player{min-width:0;display:flex;flex-direction:column;gap:10px}
+.study-featured-player iframe{display:block;width:100%;height:210px;min-height:200px;border:0;background:#101820;border-radius:10px}
+.study-featured-player>small{font-size:11px;line-height:1.5;color:#536b83}
+.study-featured-player audio{width:100%;min-height:48px}
+.study-featured-native-actions{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+.study-featured-native-actions label{font-size:11px}
+.reader.study-featured-reader .study-featured-dock.is-audio{padding-bottom:18px}
+@media(max-width:740px){
+ .reader.study-featured-reader .readerbody{flex-direction:column}
+ .reader.study-featured-reader .viewer{flex:1 1 auto;min-height:170px;height:auto}
+ .reader.study-featured-reader .study-featured-dock{flex:0 0 auto;width:100%;max-height:290px;min-height:0;padding:8px 12px 12px;border-left:0;border-top:1px solid #dae3ec;gap:7px}
+ .study-featured-heading{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+ .study-featured-heading strong{font-size:12px}
+ .study-featured-voice{justify-content:flex-start}
+ .study-featured-voice select{min-height:32px;padding:5px 8px}
+ .study-featured-player iframe{width:min(100%,340px);height:200px;min-height:200px;margin:0 auto}
+ .study-featured-player>small{font-size:10px}
+ .reader.study-featured-reader .study-featured-dock.is-audio{max-height:180px}
+}
+@media(max-height:550px) and (max-width:740px){.reader.study-featured-reader .study-featured-dock{max-height:230px}.reader.study-featured-reader .viewer{min-height:120px}}
+
+
+/* Reproductor mini en móviles: deja el PDF como protagonista.
+   YouTube exige que el iframe visible tenga al menos 200 x 200 CSS px. */
+@media(max-width:740px){
+ .reader.study-featured-reader .study-featured-dock:not(.is-audio){
+  display:grid;
+  grid-template-columns:200px minmax(0,1fr);
+  grid-template-rows:minmax(0,auto) minmax(0,1fr);
+  grid-template-areas:"video heading" "video voice";
+  gap:6px 10px;
+  align-items:start;
+  width:100%;
+  max-height:none;
+  padding:8px;
+  overflow:visible;
+ }
+ .reader.study-featured-reader .study-featured-dock:not(.is-audio) .study-featured-player{
+  grid-area:video;
+  width:200px;
+  min-width:200px;
+  gap:0;
+ }
+ .reader.study-featured-reader .study-featured-dock:not(.is-audio) .study-featured-player iframe{
+  box-sizing:border-box;
+  width:200px;
+  height:200px;
+  min-width:200px;
+  min-height:200px;
+  margin:0;
+ }
+ .reader.study-featured-reader .study-featured-dock:not(.is-audio) .study-featured-heading{
+  grid-area:heading;
+  display:block;
+  padding-top:8px;
+ }
+ .reader.study-featured-reader .study-featured-dock:not(.is-audio) .study-featured-heading strong{
+  display:block;
+  font-size:12px;
+  line-height:1.35;
+ }
+ .reader.study-featured-reader .study-featured-dock:not(.is-audio) .study-featured-heading small,
+ .reader.study-featured-reader .study-featured-dock:not(.is-audio) .study-featured-player>small{
+  display:none;
+ }
+ .reader.study-featured-reader .study-featured-dock:not(.is-audio) .study-featured-voice{
+  grid-area:voice;
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  justify-content:flex-start;
+  gap:6px;
+  min-width:0;
+  font-size:11px;
+ }
+ .reader.study-featured-reader .study-featured-dock:not(.is-audio) .study-featured-voice select{
+  width:100%;
+  max-width:100%;
+  margin:0;
+  padding:6px 4px;
+  min-height:36px;
+  font-size:12px;
+ }
+ /* El reproductor de audio nativo conserva su barra compacta independiente. */
+ .reader.study-featured-reader .study-featured-dock.is-audio{
+  display:flex;
+  max-height:180px;
+ }
+}
+@media(max-width:340px){
+ .reader.study-featured-reader .study-featured-dock:not(.is-audio){
+  gap:6px;
+  padding:6px;
+ }
+ .reader.study-featured-reader .study-featured-dock:not(.is-audio) .study-featured-heading strong{
+  font-size:11px;
+ }
+}
+
+/* Estudio adaptable: controles contextuales, sin ocupar el espacio de la partitura. */
+.study-media-header{display:flex;flex-wrap:wrap;align-items:center;gap:9px}
+.study-media-header label{font-size:12px;font-weight:750;flex:1;min-width:0}
+.study-media-header select{display:block;width:100%;min-height:39px;padding:8px;border:1px solid #cad7e5;border-radius:9px;background:#fff;color:#17314e;margin-top:5px}
+.study-media-stage{min-width:0;display:flex;flex-direction:column;gap:9px}
+.study-media-stage iframe{width:100%;min-height:200px;height:210px;display:block;border:0;border-radius:9px;background:#101820}
+.study-media-stage audio{width:100%;min-height:46px}
+.study-media-stage small{font-size:11px;line-height:1.5;color:#536b83}
+.study-media-actions{display:flex;flex-wrap:wrap;gap:8px}
+.study-media-speed{font-size:12px;display:flex;align-items:center;gap:7px}
+.study-media-speed select{min-height:36px;border-radius:7px;padding:6px}
+.study-midi-controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.study-midi-controls>button{background:#1f4369;color:#fff;border:0;padding:9px 12px;border-radius:9px;font-weight:750;min-height:38px}
+.study-midi-controls label{font-size:11px;display:flex;gap:7px;align-items:center}
+.study-midi-controls label:first-of-type{flex:1 1 100%;display:flex}
+.study-midi-controls input[type=range]{flex:1;min-width:70px;accent-color:#1d5688}
+.study-midi-controls output{font-variant-numeric:tabular-nums;font-size:12px}
+.study-midi-controls select{padding:5px;border:1px solid #cad7e5;border-radius:7px;background:white}
+.study-media-actions button[hidden]{display:none}
+.study-media-stage [role=status]{font-size:12px;color:#925b23}
+.reader.study-featured-reader .study-featured-dock.is-local{max-height:340px}
+@media(max-width:740px){.reader.study-featured-reader .study-featured-dock.is-local{max-height:240px}.study-media-stage iframe{min-height:200px}.study-media-header select{font-size:12px}}

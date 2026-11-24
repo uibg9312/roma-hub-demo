@@ -1,0 +1,47 @@
+[
+  {
+    "id": "handel-hallelujah",
+    "title": "Hallelujah — Handel",
+    "language": "en",
+    "theme": "Messiah · SATB",
+    "url": "https://www.reginalaetitiae.it/wp-content/uploads/2021/05/Haendel-Hallelujah-solo-coro.pdf",
+    "rights": "Public Domain printed on score.",
+    "pdfUrl": "/scores/handel-hallelujah.pdf"
+  },
+  {
+    "id": "beethoven-hallelujah",
+    "title": "Hallelujah — Beethoven (The Mount of Olives)",
+    "language": "en",
+    "theme": "Op. 85 · complete vocal score",
+    "url": "https://urresearch.rochester.edu/fileDownloadForInstitutionalItem.action?itemFileId=68917&itemId=21100",
+    "rights": "Public domain, Novello c.1880; Sibley Music Library.",
+    "pdfUrl": "/scores/beethoven-hallelujah.pdf"
+  },
+  {
+    "id": "amazing-grace",
+    "title": "Amazing Grace",
+    "language": "en",
+    "theme": "Hymn",
+    "url": "https://openhymnal.org/Pdf/Amazing_Grace-New_Britain.pdf",
+    "rights": "Open Hymnal Project, public domain edition 2006.",
+    "pdfUrl": "/scores/amazing-grace.pdf"
+  },
+  {
+    "id": "abide-with-me",
+    "title": "Abide With Me",
+    "language": "en",
+    "theme": "Hymn",
+    "url": "https://openhymnal.org/Pdf/Abide_With_Me-Eventide.pdf",
+    "rights": "Open Hymnal Project, public domain edition 2008.",
+    "pdfUrl": "/scores/abide-with-me.pdf"
+  },
+  {
+    "id": "donaudy-italiano",
+    "title": "36 Arie di Stile Antico, vol. II — Donaudy",
+    "language": "it",
+    "theme": "Italian art songs · O del mio amato ben",
+    "url": "https://s9.imslp.org/files/imglnks/usimg/0/09/IMSLP857573-PMLP184231-Donaudy_-_36_Arie_di_Stile_Antico_-_Volume_2.pdf",
+    "rights": "IMSLP #857573, public domain, Ricordi 1918–1922.",
+    "pdfUrl": "/scores/donaudy-italiano.pdf"
+  }
+]
