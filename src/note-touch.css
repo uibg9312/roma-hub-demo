@@ -1,0 +1,8 @@
+/* Touch-midi pilot: hit targets are attached to PDF coordinate space. */
+.touch-midi-layer{position:absolute;inset:0;z-index:8;pointer-events:none;}
+.touch-midi-hit{position:absolute;transform:translate(-50%,-50%);width:33px;height:33px;min-width:33px;min-height:33px;padding:0;box-sizing:border-box;border:1.5px solid rgba(22,101,110,.76);border-radius:50%;background:rgba(24,153,159,.12);box-shadow:0 0 0 2px rgba(255,255,255,.36);pointer-events:auto;cursor:pointer;touch-action:none;}
+.touch-midi-hit.is-playing,.touch-midi-hit:focus-visible{background:rgba(16,148,149,.43);border:2px solid #105b67;outline:2px solid white;}
+.touch-midi-chooser{position:fixed;z-index:99999;display:flex;flex-direction:column;gap:4px;background:#fff;color:#183340;border:1px solid #aab7c0;padding:8px;border-radius:12px;box-shadow:0 12px 36px rgba(0,0,0,.2);max-width:210px;}
+.touch-midi-chooser button{padding:8px 11px;background:#e8f2f2;color:#183340;border:0;border-radius:7px;min-height:38px;text-align:left;}
+.touch-midi-status{font-size:.82rem;line-height:1.4;color:#536a73;margin:8px 0 0;}
+.touch-midi-select{padding:9px 10px;min-width:140px;max-width:100%;border:1px solid #b6cbd2;border-radius:7px;background:white;color:#253844;}

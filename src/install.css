@@ -1,0 +1,91 @@
+/* PWA onboarding is scoped to its own elements and never changes the PDF reader. */
+.pwa-install-toolbar {
+  display:inline-flex;align-items:center;justify-content:center;gap:5px;
+  min-height:40px;padding:0 12px;border:1px solid #adc4c8;border-radius:999px;
+  color:#112e43;background:#e9f5f2;font:600 13px/1.2 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  cursor:pointer;white-space:nowrap;
+}
+.pwa-install-toolbar:hover,.pwa-install-toolbar:focus-visible {background:#d9ede8;outline-offset:2px}
+.pwa-install-toolbar[hidden],.pwa-install-sheet[hidden],.pwa-install-steps[hidden],.pwa-offline-notice[hidden] {display:none!important}
+.pwa-install-sheet {
+  position:fixed;right:18px;bottom:18px;z-index:85;width:min(420px,calc(100vw - 24px));
+  max-height:calc(100vh - 36px);max-height:calc(100dvh - 36px);overflow-y:auto;
+  box-sizing:border-box;background:#fff;color:#172a3a;border:1px solid #dce6e8;
+  border-radius:22px;box-shadow:0 16px 54px rgba(8,33,53,.2);
+  padding:22px;font:14px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+.pwa-install-sheet * {box-sizing:border-box}
+.pwa-install-sheet .pwa-close {
+  position:absolute;top:8px;right:9px;width:36px;height:36px;border:0;border-radius:50%;
+  color:#486174;background:transparent;cursor:pointer;font-size:28px;line-height:1;
+}
+.pwa-install-sheet .pwa-close:hover {background:#f1f5f8}
+.pwa-head {display:flex;align-items:flex-start;gap:13px;padding-right:22px}
+.pwa-head img {flex:none;display:block;width:54px;height:54px;border-radius:14px}
+.pwa-head strong {display:block;font-size:17px;line-height:1.3;color:#13243a;font-weight:700}
+.pwa-head p {font-size:13px;line-height:1.45;color:#4b6476;margin:5px 0 0}
+.pwa-note {margin:14px 0 14px;font-size:12px;color:#425667;background:#f2f7f9;padding:10px 12px;border-radius:11px}
+.pwa-install-actions {display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.pwa-install-sheet .pwa-primary,.pwa-install-sheet .pwa-secondary {
+  border-radius:11px;min-height:44px;padding:9px 15px;font-size:14px;font-weight:600;line-height:1.3;font-family:inherit;cursor:pointer;
+}
+.pwa-install-sheet .pwa-primary {flex:1 1 180px;border:1px solid #173c54;background:#173c54;color:#fff}
+.pwa-install-sheet .pwa-primary:hover {background:#0c293f}
+.pwa-install-sheet .pwa-secondary {border:1px solid #d6e1e8;background:#fff;color:#2f4b60}
+.pwa-install-steps {margin:14px 0 0;padding:11px 13px;border-left:3px solid #4d858c;background:#f6fbfa;color:#284459;font-size:13px;line-height:1.55}
+.pwa-install-state {margin:8px 0 0;font-size:12px;color:#496477}
+.pwa-install-state:empty {display:none}
+.pwa-offline-notice {
+  position:fixed;top:8px;left:50%;transform:translateX(-50%);z-index:80;
+  max-width:calc(100vw - 20px);padding:9px 14px;border-radius:999px;
+  background:#22394b;color:#fff;box-shadow:0 4px 14px #0012;
+  font:600 12px/1.4 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-align:center;
+}
+.pwa-update-notice {
+  display:flex;align-items:center;gap:10px;position:fixed;bottom:12px;left:12px;z-index:84;
+  padding:10px 12px;border-radius:14px;background:#142e43;color:#fff;
+  font:500 13px/1.4 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;box-shadow:0 6px 20px #0003;
+}
+.pwa-update-notice button {border:0;border-radius:8px;padding:7px 10px;background:#e9f3f6;color:#17364c;cursor:pointer}
+.pwa-update-notice button:last-child {background:transparent;color:#fff;padding:5px}
+body.pwa-reader-active .pwa-install-sheet,body.pwa-reader-active .pwa-update-notice,
+body.pwa-reader-active .pwa-offline-notice {display:none!important}
+:fullscreen .pwa-install-sheet,:fullscreen .pwa-update-notice {display:none!important}
+@media(max-width:680px) {
+  .pwa-install-toolbar {padding:0 10px;min-width:40px}
+  .pwa-toolbar-label {display:none}
+  .pwa-install-sheet {left:12px;right:12px;bottom:calc(80px + env(safe-area-inset-bottom,0px));
+    width:auto;max-height:calc(100vh - 125px);max-height:calc(100dvh - 125px);padding:19px}
+  .pwa-head strong {font-size:16px}
+  .pwa-update-notice {bottom:calc(80px + env(safe-area-inset-bottom,0px))}
+  .pwa-offline-notice {top:calc(6px + env(safe-area-inset-top,0px))}
+}
+@media(max-width:350px){.pwa-install-sheet{padding:16px}.pwa-install-toolbar{padding:0 8px}}
+@media(prefers-reduced-motion:no-preference) {
+  .pwa-install-sheet {animation:pwaSlideIn .18s ease-out}
+  @keyframes pwaSlideIn {from{opacity:.3;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+}
+
+/* Estado de la biblioteca: discreto y fuera de la superficie de lectura. */
+.offline-library-status{display:flex;align-items:center;gap:14px;justify-content:space-between;margin:14px 30px 0;padding:14px 17px;background:#edf5f3;border:1px solid #d7e5e2;color:#294b55;border-radius:15px;font:13px/1.4 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.offline-library-status[hidden],.offline-library-status [hidden]{display:none!important}
+.offline-library-copy{min-width:0;flex:1;display:flex;flex-direction:column;gap:4px}
+.offline-library-copy strong{font-size:14px;font-weight:700;color:#1c4650}.offline-library-copy span{font-size:12px;color:#4d6c72}
+.offline-library-copy progress{width:100%;max-width:360px;height:5px;accent-color:#347b80;border:0;border-radius:9px;overflow:hidden;margin-top:4px;background:#dbe7e5}
+.offline-library-copy progress::-webkit-progress-bar{background:#dbe7e5}.offline-library-copy progress::-webkit-progress-value{background:#347b80}
+.offline-library-pause{min-height:40px;padding:8px 14px;border:1px solid #c7d9d7;border-radius:10px;background:#fff;color:#315b62;font:600 12px system-ui,sans-serif;cursor:pointer}
+.offline-library-ready{padding:11px 15px;background:#f3f7f5}
+body.pwa-reader-active .offline-library-status{visibility:hidden}
+@media(max-width:740px){.offline-library-status{margin:10px 15px 0;padding:12px;gap:10px}.offline-library-copy strong{font-size:13px}.offline-library-copy span{font-size:11px}}
+
+
+/* Offline status collapsed: keep progress legible without covering search fields. */
+.offline-library-status.offline-library-ready{padding:7px 12px;margin-top:8px;border-radius:10px;min-height:37px}
+.offline-library-status.offline-library-ready .offline-library-copy{flex-direction:row;flex-wrap:wrap;align-items:center;gap:5px 10px}
+.offline-library-status.offline-library-ready .offline-library-copy strong{font-size:12px;white-space:nowrap}
+.offline-library-status.offline-library-ready .offline-library-copy span{font-size:11px;white-space:nowrap}
+@media(max-width:740px){
+ .offline-library-status.offline-library-ready{margin:7px 12px 0;padding:6px 10px;min-height:33px}
+ .offline-library-status.offline-library-ready .offline-library-copy strong{font-size:11px}
+ .offline-library-status.offline-library-ready .offline-library-copy span{font-size:10px}
+}
