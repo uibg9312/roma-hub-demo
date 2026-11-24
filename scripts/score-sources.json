@@ -22,18 +22,20 @@
     "title": "Amazing Grace",
     "language": "en",
     "theme": "Hymn",
-    "url": "https://openhymnal.org/Pdf/Amazing_Grace-New_Britain.pdf",
-    "rights": "Open Hymnal Project, public domain edition 2006.",
-    "pdfUrl": "/scores/amazing-grace.pdf"
+    "url": "https://mobilehymns.org/PDF/Amazing_Grace.pdf",
+    "rights": "Public domain, John Newton and Edwin O. Excell; Mobile Hymns score.",
+    "pdfUrl": "/scores/amazing-grace.pdf",
+    "fallback": "https://archive.org/download/imslp-grace-anonymous/PMLP186886-Amazing_Grace_-_score.pdf"
   },
   {
     "id": "abide-with-me",
     "title": "Abide With Me",
     "language": "en",
     "theme": "Hymn",
-    "url": "https://openhymnal.org/Pdf/Abide_With_Me-Eventide.pdf",
-    "rights": "Open Hymnal Project, public domain edition 2008.",
-    "pdfUrl": "/scores/abide-with-me.pdf"
+    "url": "https://mobilehymns.org/PDF/Abide_With_Me.pdf",
+    "rights": "Public Domain printed on Mobile Hymns score; Henry Lyte and William H. Monk.",
+    "pdfUrl": "/scores/abide-with-me.pdf",
+    "fallback": "https://www.hymnary.org/media/fetch/96149"
   },
   {
     "id": "donaudy-italiano",
