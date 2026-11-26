@@ -1,7 +1,10 @@
 /* App shell cache only; persistent user PDFs and IndexedDB data are not removed. */
-const SHELL_CACHE = 'coro-hub-shell-v101';
+const SHELL_CACHE = 'coro-hub-shell-v106';
 const PDF_CACHE = 'choir-downloaded-pdf-v1';
 const SHELL = [
+  '/director-tones.js',
+  '/roma-fragment.js',
+  '/roma-v2.css', '/roma-theme.js', '/brand-luce.svg', '/brand-notte.svg',
   '/', '/index.html', '/ios12-redirect.js', '/styles.css', '/app.js', '/search.js', '/study.js', '/study-media.js', '/study.css', '/note-touch.js', '/note-touch.css', '/pdf-gestures.js', '/notes-first10.json', '/director.js', '/director.css',
   '/offline.js', '/auto-offline.js', '/install.js', '/install.css', '/compact-home.css', '/auth-google.js', '/vendor/pdf.min.js',
   '/vendor/pdf.worker.min.js', '/config.js', '/catalog.json',
@@ -34,7 +37,7 @@ self.addEventListener('fetch', event => {
   const request = event.request;
   if (request.method !== 'GET') return;
   const url = new URL(request.url);
-  if (url.origin !== self.location.origin) return;
+  if (url.origin !== self.location.origin || url.pathname.startsWith('/ios12/')) return;
 
   if (request.mode === 'navigate') {
     event.respondWith(

@@ -1,8 +1,11 @@
 /* App shell cache only; persistent user PDFs and IndexedDB data are not removed. */
-const SHELL_CACHE = 'coro-hub-shell-ios12-v5';
+const SHELL_CACHE = 'coro-hub-shell-ios12-v106';
 const PDF_CACHE = 'choir-downloaded-pdf-v1';
 const SHELL = [
-  '/ios12/', '/ios12/index.html', '/ios12/styles.css', '/ios12/app.js', '/ios12/search.js', '/ios12/study.js', '/ios12/study.css',
+  '/director-tones.js', '/director.js', '/director.css',
+  '/ios12/roma-fragment.js', '/study-media.js',
+  '/ios12/roma-v2.css', '/ios12/roma-theme.js', '/ios12/brand-luce.svg', '/ios12/brand-notte.svg',
+  '/ios12/', '/ios12/index.html', '/ios12-redirect.js', '/ios12/styles.css', '/ios12/app.js', '/ios12/search.js', '/ios12/study.js', '/ios12/study.css',
   '/ios12/offline.js', '/ios12/auto-offline.js', '/ios12/install.js', '/ios12/install.css', '/ios12/compact-home.css', '/ios12/ios12-compat.js', '/ios12/ios12.css', '/ios12/auth-google.js', '/ios12/vendor/pdf.min.js',
   '/ios12/vendor/pdf.worker.min.js', '/ios12/config.js', '/catalog.json',
   '/ios12/icon.svg', '/ios12/icons/icon-192.png', '/ios12/icons/icon-512.png',

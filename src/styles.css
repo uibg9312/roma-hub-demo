@@ -266,3 +266,5 @@
 /* Reader v5: gesture navigation is active only after the controller attaches. */
 .reader-v2 .viewer.gesture-enabled,.reader-v2 .viewer.gesture-enabled .pdf-page{touch-action:none}
 .reader-v2 .viewer.book-mode.is-zoomed{scroll-snap-type:none}
+
+#adminGo.account-access{width:auto;min-width:44px;min-height:36px;padding:0 10px;border-radius:10px;font-size:12px;white-space:nowrap;flex-shrink:0;color:#354b62;background:#dce7ef;border:1px solid #d1dde6}@media(max-width:420px){.topbar .tools #mode{display:none}}

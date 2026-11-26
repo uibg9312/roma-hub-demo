@@ -1,4 +1,4 @@
-/* Roma Hub: automatic PDF library after PWA installation. */
+/* Roma Hub Demo: automatic PDF library after PWA installation. */
 (function(){'use strict';
 var CACHE='choir-downloaded-pdf-v1',INSTALL='coro-library-installed-v1',PAUSE='coro-library-paused-v1',BULK='coro-ios12-download-all-v1',SKIPS='coro-ios12-pdf-skipped-v2',MAX_BYTES=24*1024*1024,jobs=[],known=new Set(),publicUrls=new Set(),failed=new Map(),pending=new Map(),controllers=new Set(),sig='',running=false,dirty=false,timer=null,phase='',listener=function(){},last='',panel=null,persistAsked=false,skipped=new Map(),lastError='';
 var media=window.matchMedia?window.matchMedia('(display-mode: standalone)'):null,network=navigator.connection||navigator.mozConnection||navigator.webkitConnection;
@@ -52,8 +52,9 @@ function status(){
  if(!panel){var main=document.querySelector('.main'),screen=document.getElementById('screen');if(!main||!screen)return;
  panel=document.createElement('section');panel.className='offline-library-status';panel.id='offlineLibraryStatus';panel.hidden=true;
  panel.innerHTML='<div class="offline-library-copy"><strong id="offlineLibraryTitle"></strong><span id="offlineLibraryDetail"></span><progress id="offlineLibraryProgress" max="1" value="0" aria-label="Preparación de partituras"></progress></div><button class="offline-library-pause" type="button" id="offlineLibraryPause">Pausar</button>';
- main.insertBefore(panel,screen);panel.querySelector('button').addEventListener('click',function(){if(paused()){put(PAUSE,'0');failed.clear();kick(0)}else{put(PAUSE,'1');abortBulk();status()}})}
- panel.hidden=!installed()||!total;
+ panel.querySelector('button').addEventListener('click',function(){if(paused()){put(PAUSE,'0');failed.clear();kick(0)}else{put(PAUSE,'1');abortBulk();status()}})}
+ var mount=document.getElementById('offlineLibraryMount');if(mount&&panel.parentNode!==mount)mount.appendChild(panel);else if(!mount&&panel.parentNode)panel.parentNode.removeChild(panel);
+ panel.hidden=!mount||!installed()||!total;
  var legacy=!!(window.CoroIOS12&&window.CoroIOS12.isIOS12);
  var title=done?'Repertorio disponible sin conexión':'Preparando biblioteca sin conexión',detail=ready+' de '+total+' partituras disponibles';
  if(legacy){title=done?'Biblioteca completa':bulkRequested()?(paused()?'Descarga de partituras en pausa':phase==='storage'?'Límite de almacenamiento web':phase==='partial'?'Descarga parcial completada':navigator.onLine===false?'Descarga esperando conexión':'Descargando partituras para iOS 12'):'Biblioteca offline para iOS 12';detail=ready+' de '+total+' partituras guardadas.'+(skippedJobs().length?' '+skippedJobs().length+' pendientes no descargables.':'')+(bulkRequested()?' Puedes ver los detalles en Configuración.':' Descarga la biblioteca desde Configuración.') }

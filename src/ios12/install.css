@@ -77,3 +77,6 @@ body.pwa-reader-active .pwa-offline-notice {display:none!important}
 .offline-library-ready{padding:11px 15px;background:#f3f7f5}
 body.pwa-reader-active .offline-library-status{visibility:hidden}
 @media(max-width:740px){.offline-library-status{margin:10px 15px 0;padding:12px;gap:10px}.offline-library-copy strong{font-size:13px}.offline-library-copy span{font-size:11px}}
+
+/* Library status is intentionally scoped to the explicitly selected offline filter. */
+#offlineLibraryMount .offline-library-status{margin:12px 0 16px}

@@ -8,8 +8,8 @@
   "display": "standalone",
   "orientation": "any",
   "lang": "es",
-  "background_color": "#f5f7fa",
-  "theme_color": "#13243a",
+  "background_color": "#F5F7FB",
+  "theme_color": "#203D78",
   "icons": [
     {
       "src": "/ios12/icons/icon-192.png",

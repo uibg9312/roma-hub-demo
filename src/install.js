@@ -1,8 +1,7 @@
-/* Roma Hub Demo · Installation experience. Independent of the score viewer. */
+/* Coro Roma Hub Demo · Installation experience. Independent of the score viewer. */
 (function () {
   'use strict';
   var DISMISS_KEY = 'coro-roma-install-dismissed-v1';
-  var SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000;
   var ua = navigator.userAgent || '';
   var isIOS = /iPad|iPhone|iPod/.test(ua) ||
     (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
@@ -19,10 +18,10 @@
     return navigator.standalone === true ||
       !!(window.matchMedia && window.matchMedia('(display-mode: standalone)').matches);
   }
-  function dismissedRecently() {
+  function dismissedPermanently() {
     try {
       var last = Number(localStorage.getItem(DISMISS_KEY) || 0);
-      return last > 0 && Date.now() - last < SEVEN_DAYS;
+      return last > 0;
     } catch (_) { return false; }
   }
   function rememberDismissal() {
@@ -62,19 +61,19 @@
     sheet.id = 'pwaInstallSheet';
     sheet.className = 'pwa-install-sheet';
     sheet.setAttribute('role', 'region');
-    sheet.setAttribute('aria-label', 'Instalar Roma Hub Demo');
+    sheet.setAttribute('aria-label', 'Instalar Coro Roma Hub Demo');
     sheet.hidden = true;
     sheet.innerHTML =
       '<button type="button" class="pwa-close" aria-label="Cerrar invitación de instalación">×</button>' +
       '<div class="pwa-head"><img src="/icons/icon-192.png" width="54" height="54" alt="">' +
-      '<div><strong>Ten Roma Hub Demo en tu pantalla de inicio</strong>' +
+      '<div><strong>Instala Roma Hub Demo</strong>' +
       '<p>Abre tus partituras y tu material de estudio como una app.</p></div></div>' +
-      '<p class="pwa-note">Al instalar, las partituras se guardan automáticamente. El repertorio actual ocupa unos 265 MB. Usa Wi-Fi y mantén la aplicación abierta mientras se prepara; puedes seguir leyendo.</p>' +
+      '<p class="pwa-note" hidden>Al instalar, las partituras se guardan automáticamente. El repertorio actual ocupa unos 265 MB. Usa Wi-Fi y mantén la aplicación abierta mientras se prepara; puedes seguir leyendo.</p>' +
       '<div class="pwa-install-actions"><button type="button" class="pwa-primary" id="pwaInstallAction">Instalar aplicación</button>' +
-      '<button type="button" class="pwa-secondary" id="pwaInstallLater">Ahora no</button></div>' +
+      '<button type="button" class="pwa-secondary" id="pwaInstallLater">No mostrar más</button></div>' +
       '<p class="pwa-install-steps" id="pwaInstallSteps" hidden></p>' +
       '<p class="pwa-install-state" id="pwaInstallState" role="status" aria-live="polite"></p>';
-    document.body.appendChild(sheet);
+    var main=document.querySelector('.main'),screen=document.getElementById('screen');if(main&&screen)main.insertBefore(sheet,screen);else document.body.appendChild(sheet);
     sheet.querySelector('.pwa-close').addEventListener('click', function () { hideSheet(true); });
     sheet.querySelector('#pwaInstallLater').addEventListener('click', function () { hideSheet(true); });
     sheet.querySelector('#pwaInstallAction').addEventListener('click', install);
@@ -90,7 +89,7 @@
     } else {
       action.textContent = isIOS ? 'Ver pasos para instalar' : 'Cómo instalar';
       steps.textContent = installationSteps();
-      steps.hidden = !isIOS;
+      steps.hidden = true;
     }
   }
   function openSheet() {
@@ -101,6 +100,7 @@
   }
   function install() {
     if (standalone()) { hideInstalled(); return; }
+    var note=sheet.querySelector('.pwa-note');if(note)note.hidden=false;
     if (!installEvent) {
       var steps = sheet.querySelector('#pwaInstallSteps');
       steps.textContent = installationSteps();
@@ -134,8 +134,8 @@
     toolbarButton.id = 'pwaInstallToolbar';
     toolbarButton.type = 'button';
     toolbarButton.className = 'pwa-install-toolbar';
-    toolbarButton.setAttribute('aria-label', 'Instalar Roma Hub Demo');
-    toolbarButton.title = 'Instalar Roma Hub Demo';
+    toolbarButton.setAttribute('aria-label', 'Instalar Coro Roma Hub Demo');
+    toolbarButton.title = 'Instalar Coro Roma Hub Demo';
     toolbarButton.innerHTML = '<span aria-hidden="true">↓</span><span class="pwa-toolbar-label"> Instalar app</span>';
     toolbarButton.addEventListener('click', openSheet);
     tools.insertBefore(toolbarButton, tools.firstChild);
@@ -210,7 +210,7 @@
         if (readerActive()) hideSheet(false);
       }).observe(root, {childList:true});
     }
-    if (!installed && !dismissedRecently()) openSheet();
+    if (!installed && !dismissedPermanently()) openSheet();
     if ('serviceWorker' in navigator) registerWorker();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);

@@ -1,5 +1,5 @@
 
-/* Roma Hub Demo · Estudio SDD 1.0 */
+/* Coro Roma · Estudio SDD 1.0 */
 .study-headcontrols{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:12px 0 20px;padding:16px 19px;background:#fff;border:1px solid #e3e9ee;border-radius:14px}
 .study-voice-label{font-weight:750;color:#293f57;font-size:14px}
 .study-voice-label select,.practice-voice select,.practice-player select,.study-select-songs{border:1px solid #d9e2ec;padding:10px 12px;border-radius:9px;background:#fff;color:#203850;margin-left:9px;max-width:100%}
@@ -47,3 +47,5 @@
 .practice-audio-label{font-size:11px;font-weight:750;max-width:175px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .study-missing{color:#886331;font-size:11px;background:#fff3df;border-radius:7px;padding:8px 10px}
 @media(max-width:740px){.study-item{padding:15px;flex-direction:column;align-items:stretch}.study-item-actions{justify-content:flex-start;max-width:none}.study-lesson>strong{font-size:15px}.study-headcontrols{padding:13px}.study-voice-label select{font-size:13px;padding:8px;margin-left:4px}.study-tabs button{font-size:12px;padding:10px 11px}.study-modal{max-height:92vh}.study-admin-row{align-items:flex-start;flex-wrap:wrap}.study-admin-row .controls{width:100%}.study-practice-bar{padding:9px 10px;gap:7px}.practice-title{flex:1 1 100px}.practice-player{order:3;flex:1 1 100%}.practice-player audio{min-width:135px}.practice-audio-label{display:none}.study-practice-bar .btn{min-height:33px;padding:5px 7px;font-size:10px}.reader .readerbody{min-height:120px}}
+
+.rh-fragment{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:6px;font-size:12px;color:inherit}.rh-fragment button{min-height:36px;min-width:36px;border-radius:6px;border:1px solid var(--rh-border,#c5d0df);background:var(--rh-surface,#fff);color:var(--rh-text,#17243D)}.rh-fragment button:disabled{opacity:.45}.rh-fragment output{min-width:70px;font-variant-numeric:tabular-nums}

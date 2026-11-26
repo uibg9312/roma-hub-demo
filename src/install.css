@@ -89,3 +89,6 @@ body.pwa-reader-active .offline-library-status{visibility:hidden}
  .offline-library-status.offline-library-ready .offline-library-copy strong{font-size:11px}
  .offline-library-status.offline-library-ready .offline-library-copy span{font-size:10px}
 }
+
+/* Library status is intentionally scoped to the explicitly selected offline filter. */
+#offlineLibraryMount .offline-library-status{margin:12px 0 16px}
